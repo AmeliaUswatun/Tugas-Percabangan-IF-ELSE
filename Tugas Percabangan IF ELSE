@@ -1,0 +1,71 @@
+package percabangan;
+import java.util.Scanner;
+public class tugaspercabangan {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner (System.in);
+      double harga, total, diskon, totalakhir = 0, kembalian, bayar;
+      int jumlah;
+      
+       System.out.print("jumlah =");
+    jumlah= sc.nextInt();
+
+    System.out.print("harga  =");
+    harga= sc.nextDouble();
+
+    total=jumlah*harga;
+    System.out.println("total  =" + total);
+
+        if(total<100000){
+            diskon=0;  
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+
+        }else if(total>=100001&&total<=200000){
+            diskon= total*0.05;
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+
+        }else if(total>=200001&&total<=300000){ 
+            diskon = 0.1*total;
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+
+        }else if(total>=300001&&total<=400000){
+            diskon = total*0.15;
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+
+        }else if(total>=400001&&total<=500000){
+            diskon = 0.2*total;
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+
+        }else if(total>500001){
+            diskon = 0.25*total;
+            System.out.println("diskon      =" +diskon);
+            totalakhir= total-diskon;
+            System.out.println("totalakhir  =" + totalakhir);
+        }
+//menentukan uang yang akan dibayarkan
+
+      System.out.print("Uang yang dibayar :" );
+        bayar=sc.nextDouble();
+        
+        if (bayar == totalakhir ){
+            System.out.println("Uang PAS");
+        }else if(bayar>totalakhir){
+            kembalian=bayar-totalakhir;
+            System.out.println("Kembalian : "+kembalian);
+        }else{
+            kembalian=totalakhir-bayar;
+            System.out.println("Uang anda tidak cukup : "+kembalian);
+             System.out.println("+++++++SELAMAT BERBELANJA LAGI+++++++");     
+        }
+    }
+        }
+    
